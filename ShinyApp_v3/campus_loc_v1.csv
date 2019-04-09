@@ -1,0 +1,25 @@
+<<<<<<< HEAD
+uni_id,University,Campus,Suburb,lat,long,Average_per_person
+1,Monash University,Main,CLAYTON,-37.9153,145.134,191
+2,La Trobe University,Main,BUNDOORA,-37.717,145.0432,178
+3,RMIT University,Main,CBD,-37.8081,144.9633,294
+4,Swinburne University of Technology,Main,HAWTHORN,-37.8529,144.9917,225
+5,University of Divinity,Main,KEW,-37.8057,145.0368,212
+6,University of Melbourne,Main,PARKVILLE,-37.7963,144.9614,260
+7,Victoria University,Main,FOOTSCRAY,-37.7933,144.8965,191
+8,Monash University,Caulfield,CAULFIELD,-37.8764,145.0454,223
+9,Deakin University,Burwood,BURWOOD,-37.85,145.1148,222
+10,University of Melbourne,Burnley,BURNLEY,-37.8263,145.0173,275
+=======
+uni_id,University,Campus,Suburb,lat,long,Average_per_person
+1,Monash University,Main,CLAYTON,-37.9153,145.134,191
+2,La Trobe University,Main,BUNDOORA,-37.717,145.0432,178
+3,RMIT University,Main,CBD,-37.8081,144.9633,294
+4,Swinburne University of Technology,Main,HAWTHORN,-37.8529,144.9917,225
+5,University of Divinity,Main,KEW,-37.8057,145.0368,212
+6,University of Melbourne,Main,PARKVILLE,-37.7963,144.9614,260
+7,Victoria University,Main,FOOTSCRAY,-37.7933,144.8965,191
+8,Monash University,Caulfield,CAULFIELD,-37.8764,145.0454,223
+9,Deakin University,Burwood,BURWOOD,-37.85,145.1148,222
+10,University of Melbourne,Burnley,BURNLEY,-37.8263,145.0173,275
+>>>>>>> iterationFinal
