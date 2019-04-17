@@ -64,7 +64,7 @@
             //$("#campus").empty();
             // $("#campus").prepend("<option>please select your campus</option>");
             var campus = new Array(6);
-            campus[0] = new Array("Clayton", "Caufield");
+            campus[0] = new Array("Clayton", "Caulfield");
             campus[1] = new Array("Parkville", "Burnley");
             campus[2] = new Array("CBD");
             campus[3] = new Array("Hawthorn");
