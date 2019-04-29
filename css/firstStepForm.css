@@ -5,11 +5,7 @@
       width: 70%;
       min-width: 300px;
     }
-
-    input.invalid {
-      background-color: #ffdddd;
-    }
-
+    
     .tab {
       display: none;
     }
@@ -18,7 +14,7 @@
       height: 15px;
       width: 15px;
       margin: 0 2px;
-      background-color: #bbbbbb;
+      background-color: rgb(51,122,183);
       border: none; 
       border-radius: 50%;
       display: inline-block;
@@ -30,9 +26,65 @@
     }
 
     .step.finish {
-      background-color: #4CAF50;
+      /*background-color: #4CAF50;*/
+      background-color: rgb(51,122,183);
     }
     div ul li {
                  display: inline;
                 margin-right: 40px;
             }
+
+        #othersInput{
+      display: none;
+    }
+    input.invalid {
+      background-color: #ffdddd;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 80%;
+      height: 15px;
+      border-radius: 3px;   
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.5;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%; 
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+
+    .svgIcon{
+      opacity: 0.5; 
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .stepDiv{
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+    }
+
+    .spa{
+      color: red;
+      font-weight: bolder;
+    }    

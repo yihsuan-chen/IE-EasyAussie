@@ -7,7 +7,11 @@
 			height: 100%;
 			margin:40px auto;
 			background: rgb(247,247,247);
-			box-shadow: 0 0 0.1rem #c2c2c2;
+			
+		}
+		.recommendation{
+			width: 65%;
+			background: rgb(247,247,247);
 		}
 		.header{
 			width: 100%;
@@ -26,6 +30,11 @@
 		}
 		table tr{
 			height: 85px;
+		}
+		.table tr td{
+			border-top: 0px;
+			font-weight: bolder;
+    		font-family: BrandonTextWeb-Regular;
 		}
 		.btn-secondary{
 				position: absolute;

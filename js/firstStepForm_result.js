@@ -54,15 +54,6 @@
 		}
 	}
 
-	//other suburbs
-		// function otherSub(){
-		// 	else if(isRangeIn(university,6,0) && (livingPlace === "OtherSuburb")){
-		// 		var classSel = $('#proAcc');
-		// 		totalCost = "$160";
-		// 		totalCostPer = 160/400*100 + "%";
-		// 		classSel.html(totalCost);
-		// 		classSel.css("width",totalCostPer);
-		// }
 // living cost 
 		$(document).ready(function(){
 			// otherSub();

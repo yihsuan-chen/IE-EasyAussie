@@ -33,7 +33,7 @@ var currentTab = 0;
         showTab(currentTab);
       }
 
-      function validateForm() {
+/*      function validateForm() {
         var x, y, i, valid = true;
         x = document.getElementsByClassName("tab");
         y = x[currentTab].getElementsByTagName("input");
@@ -47,7 +47,7 @@ var currentTab = 0;
           document.getElementsByClassName("step")[currentTab].className += " finish";
         }
         return valid; 
-      }
+      }*/
 
       function fixStepIndicator(n) {
 

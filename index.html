@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- test -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/logo.ico">
+
+    <title>First Steps in Melbourne - International Students Guide to Melbourne</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script>
+    // map
+    function initMap() {
+      var Melbourne = {lat: -37.815018, lng: 144.946014};
+      var map = new google.maps.Map(
+          document.getElementById('map'), {zoom: 12, center: Melbourne});
+      var marker = new google.maps.Marker({position: Melbourne, map: map});
+    }
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP-O19kkdm7neiuZWGbcf_M0wZ30zM3Tw&callback=initMap">
+    </script>
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+<!--nav-->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand active" href="http://www.firststepsinmel.ml/">First steps in Melbourne</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li ><a href="firstStepForm.php">Your living cost</a></li>
+                <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Recommendation</a></li>
+                <li><a href="#com">Comparision</a></li>
+                <li><a href="#pred">Prediction</a></li>
+                <li><a href="#about">About us</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick start here <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="fisrtStepForm.html">Your living cost</a></li>
+                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Recommendation</a></li>
+                    <li><a href="#">Comparision</a></li>
+                    <li><a href="#">Prediction</a></li>
+                    <li><a href="#">About us</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <!-- Carousel -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="img/3.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Feel strange in Melbourne?</h1>
+              <p>Melbourne is the most livable city, however most 'new Australian' will feel uncomfortable in such a new place. Don't panic, some valuable ingormation will be found from us..</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="img/5.png" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Troubles when new to Melbourne?</h1>
+              <p>Melbourne is a great city, but everyone will be anxious about moving to a new place – rental, budget, advice… no worries, we are here willing to help you..</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="img/6.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Wanna to find the most convenience suburb?</h1>
+              <p>Melbourne is a huge city. Feeling confused with suburb selecting? Don't worry, we will analysis them in many aspects - living facilities, resturant...</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+    <div class="container marketing">
+      <div class="row">
+        <div class="col-lg-4">
+          <a href="fisrtStepForm.html"><img class="img-circle" src="img/calculator.png" alt="Generic placeholder image" width="140" height="140"></a>
+          <h2>your living costs</h2>
+          <p>Have a brief idea about the average cost based on your cost situation from rental cost, daily consumption to transportation. Note that the outcome may vary by different cost level, here we consider about the most common group with median level cost.</p>
+          <p><a class="btn btn-default" href="fisrtStepForm.html" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="img/future.jpg" alt="Generic placeholder image" width="140" height="140">
+          <h2>future tendency</h2>
+          <p>The world is changing all the time and full of uncertainties. Here you’ll find the estimate annual cost over your duration stay in Melbourne in a simple and intuitive way. Behind of this,inflation rate, consumer price to support the result you get.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/"><img class="img-circle" src="img/recommendation.jpg" alt="Generic placeholder image" width="140" height="140"></a>
+          <h2>your life advice</h2>
+          <p>Looking for some place to live with great convenient or close to your university? With a personalized recommendation system, you can find some suggestions based on your own spending habits.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+          <p><a class="btn btn-default" href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/" role="button">View details &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">First heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">The world is changing all the time and full of uncertainties. Here you’ll find the estimate annual cost over your duration stay in Melbourne in a simple and intuitive way. Behind of this,inflation rate, consumer price to support the result you get.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Second heading. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">The world is changing all the time and full of uncertainties. Here you’ll find the estimate annual cost over your duration stay in Melbourne in a simple and intuitive way. Behind of this,inflation rate, consumer price to support the result you get.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider-map">
+      <h1>The overview of Melbourne</h1>
+      <div class="hidden-xs col-md-12 col-lg-12" id="map" style="width: 100%;height: 300px;">
+        
+      </div>
+
+      
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer style="height: 100px; width:100%;">
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy;2019 by 'First steps in Melbourne'. Proudly created with EasyAussie team. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>   
+      </footer>
+    
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
