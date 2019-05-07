@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="shortcut icon" href="image/favicon.ico" type="image/favicon">
+<link rel="icon" href="image/favicon.ico" type="image/favicon">
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Material Design Bootstrap</title>
+    <title>Bills</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
@@ -132,14 +135,14 @@ body {font-family: Arial; max-width:auto; margin: auto; text-decoration: none;}
         </div>
     </nav>
 
-            <div class="container" style="height: 400px;width: 100%;text-align: center; background-color: white;">
+            <div class="container" style="height: 500px;width: 100%;text-align: center; background-color: white;">
               <p><h4>Calculate the approximate cost of monthly bills based on usage</h4></p>
                 <div class="tab" style="display: inline-block;">
                   <button class="tablinks" onclick="openEvent(event, 'Phone')">Phone</button>
                   <button class="tablinks" onclick="openEvent(event, 'Internet')">Internet</button>
                   <button class="tablinks" onclick="openEvent(event, 'Electricity')">Electricity</button>
-                  <button class="tablinks" onclick="openEvent(event, 'Gas')">Gas</button>
-                  <button class="tablinks" onclick="openEvent(event, 'Water')">Water</button>
+               <!--   <button class="tablinks" onclick="openEvent(event, 'Gas')">Gas</button>
+                  <button class="tablinks" onclick="openEvent(event, 'Water')">Water</button> -->
                 </div>
 
               <div id="Phone" class="tabcontent" style="height: 300px;width: 100%;text-align:center;">
@@ -147,26 +150,26 @@ body {font-family: Arial; max-width:auto; margin: auto; text-decoration: none;}
               <h3>Phone Usage</h3>
               <p>How much data would you need?</p>
               <div id="RadioButtons1">
-            	  <input type="radio" name="RadioButtons1" id="Radio1">
+            	  <input type="radio" name="RadioButtons1" id="Radio1" value="5">
             	  <label for="Radio1">2GB</label>
-            	  <input type="radio" name="RadioButtons1" id="Radio2">
+            	  <input type="radio" name="RadioButtons1" id="Radio2" value="12">
             	  <label for="Radio2">6GB</label>
-            	  <input type="radio" name="RadioButtons1" id="Radio3">
+            	  <input type="radio" name="RadioButtons1" id="Radio3" value="15">
             	  <label for="Radio3">10GB</label>
               </div>
             	<p>Do you require international calling?</p>
               <div id="RadioButtons2">
-            	  <input type="radio" name="RadioButtons2" id="Radio4">
+            	  <input type="radio" name="RadioButtons2" id="Radio4" value="20">
             	  <label for="Radio4">Yes</label>
-            	  <input type="radio" name="RadioButtons2" id="Radio5">
+            	  <input type="radio" name="RadioButtons2" id="Radio5" value="0">
             	  <label for="Radio5">No</label>
               </div>
             	<br>
             	<div>
-            	  <button id="Button1">Calculate</button>
+            	  <button id="Button1" onClick="phonecost()">Calculate</button>
             	</div>
             	<br>
-            	<div> Average cost per month is:</div>
+            	<div> Average cost per month is:<span id="billval"></span></div>
             </div>
                 
 
@@ -187,20 +190,39 @@ body {font-family: Arial; max-width:auto; margin: auto; text-decoration: none;}
 
             <div id="Electricity" class="tabcontent" style="height: 300px;width: 100%;text-align:center;">
               <h3>Electricity</h3>
-              <p>My Usage is:</p>
-              <div id="RadioButtons4">
-            	  <input type="radio" name="RadioButtons4" id="Radio9">
-            	  <label for="Radio9">Low</label>
-            	  <input type="radio" name="RadioButtons4" id="Radio10">
-            	  <label for="Radio10">Medium</label>
-            	  <input type="radio" name="RadioButtons4" id="Radio11">
-            	  <label for="Radio11">High</label>
-              </div>
-            	<br>
-            	<div> Average cost per month is:</div>
+			  <p>Do you use Electric heater?</p>
+			  <div id="RadioButtons7">
+				  <input type="radio" name="RadioButtons7" id="Radio18" value="1">
+				  <label for="Radio18">Yes</label>
+				  <input type="radio" name="RadioButtons7" id="Radio19" value="0">
+				  <label for="Radio19">No</label>
+			  </div>
+			  Do you use Air conditioner?
+				<div id="RadioButtons8">
+				  <input type="radio" name="RadioButtons8" id="Radio20" value="1">
+				  <label for="Radio20">Yes</label>
+				  <input type="radio" name="RadioButtons8" id="Radio21" value="0">
+				  <label for="Radio21">No</label>
+			  </div>
+			Do you use Underfloor heating?
+			  <div id="RadioButtons9">
+				  <input type="radio" name="RadioButtons9" id="Radio22" value="1">
+				  <label for="Radio22">Yes</label>
+				  <input type="radio" name="RadioButtons9" id="Radio23" value="0">
+				  <label for="Radio23">No</label>
+			  </div>
+			Do you use Electric water heater?
+			  <div id="RadioButtons10">
+				  <input type="radio" name="RadioButtons10" id="Radio24" value="1">
+				  <label for="Radio24">Yes</label>
+				  <input type="radio" name="RadioButtons10" id="Radio25" value="0">
+				  <label for="Radio25">No</label>
+			  </div>
+			  <button id="Button2" onClick="eleccal()">Calculate</button>
+            	<div> Your usage<span id="elecost"></span></div>
             </div>
 
-            <div id="Gas" class="tabcontent" style="height: 300px;width: 100%;text-align:center;">
+          <!--  <div id="Gas" class="tabcontent" style="height: 300px;width: 100%;text-align:center;">
               <h3>Gas</h3>
               <p>My Usage is:</p>
               <div id="RadioButtons5">
@@ -213,7 +235,7 @@ body {font-family: Arial; max-width:auto; margin: auto; text-decoration: none;}
               </div>
             	<br>
             	<div> Average cost per month is:</div>
-            </div>
+            //</div>
 
   <div id="Water" class="tabcontent" style="height: 300px;width: 100%;text-align:center;">
     <h3>Water</h3>
@@ -229,7 +251,7 @@ body {font-family: Arial; max-width:auto; margin: auto; text-decoration: none;}
   	<br>
   	<div> Average cost per month is:</div>
   </div>
-</div>
+</div> -->
 <script>
 function openEvent(evt, Name) {
   var i, tabcontent, tablinks;
@@ -265,20 +287,65 @@ $(function() {
 $(function() {
 	$( "#RadioButtons6" ).buttonset(); 
 });
+	
+	function eleccal(){
+		
+		var eh = document.querySelector('input[name=RadioButtons7]:checked').value;
+		var ac = document.querySelector('input[name=RadioButtons8]:checked').value;
+		var uh = document.querySelector('input[name=RadioButtons9]:checked').value;
+		var ewh = document.querySelector('input[name=RadioButtons10]:checked').value;
+		var finalelec = parseInt(eh) + parseInt(ac) + parseInt(uh) + parseInt(ewh);
+      		if (finalelec == 4) {
+            var highcost = 335;
+              document.getElementById("elecost").innerHTML = 'is high and it the average monthly bill would be $'+highcost;
+          }
+          else if (finalelec == 2 || finalelec == 3) {
+            var mediumcost = 205;
+          document.getElementById("elecost").innerHTML = 'is medium and it the average monthly bill would be $'+mediumcost;
+          }
+             else {
+            var lowcost = 80;
+          document.getElementById("elecost").innerHTML = 'is low and it the average monthly bill would be $'+lowcost;
+          }
+	}
+	
+	function phonecost(){
+		
+		var datacost = document.querySelector('input[name=RadioButtons1]:checked').value;
+		var intercal = document.querySelector('input[name=RadioButtons2]:checked').value;
+		var phonetotalbill = parseInt(datacost) + parseInt(intercal);
+		
+		document.getElementById("billval").innerHTML = phonetotalbill+'$';
+	}
 	function unlimited() {
-var  cost= 70;
-  document.getElementById("myText").innerHTML = cost+'$';
+var  cost= 80;
+  document.getElementById("myText").innerHTML = '$'+cost;
 	}
 		
 	function midinternet() {
-var  midintr= 40;
-  document.getElementById("myText").innerHTML = midintr+'$';
+var  midintr= 58;
+  document.getElementById("myText").innerHTML = '$'+midintr;
 	}
 	
 	function lowinternet() {
-var  lowintr= 20;
-  document.getElementById("myText").innerHTML = lowintr+'$';
+var  lowintr= 50;
+  document.getElementById("myText").innerHTML = '$'+lowintr;
 	}
+$(function() {
+	$( "#RadioButtons7" ).buttonset(); 
+});
+$(function() {
+	$( "#RadioButtons8" ).buttonset(); 
+});
+$(function() {
+	$( "#RadioButtons9" ).buttonset(); 
+});
+$(function() {
+	$( "#RadioButtons10" ).buttonset(); 
+});
+$(function() {
+	$( "#Button2" ).button(); 
+});
 </script>
    
 </body>
