@@ -45,6 +45,9 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="Bills.php">Bills</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Student Support</a>
                 </li>
@@ -62,6 +65,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-default">
                         <a class="dropdown-item" href="firstStepForm.php">Living Cost Calculator</a>
+                        <a class="dropdown-item" href="Bills.php">Bills</a>
                         <a class="dropdown-item" href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Student Support</a>
                         <a class="dropdown-item" href="comparsion.html">Comparision with Shanghai</a>
                <!--          <a class="dropdown-item" href="#">Prediction</a>

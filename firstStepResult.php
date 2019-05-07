@@ -279,7 +279,8 @@
                         <ul class="nav navbar-nav" style="margin-left:80px;">
                             <li><a href="http://www.firststepsinmel.ml">Home</a></li>
                             <li><a href="introduction.php">Living Cost Calculator</a></li>
-                            <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Studetn Support</a></li>
+                            <li><a href="Bills.php">Bills</a></li>
+                            <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Student Support</a></li>
                             <li><a href="comparsion.html">Compare with Shanghai</a></li>
                       <!--       <li><a href="#pred">Prediction</a></li>
                             <li><a href="#about">About us</a></li> -->

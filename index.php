@@ -297,6 +297,7 @@
                         <ul class="nav navbar-nav" style="margin-left:100px;">
                             <li><a href="http://www.firststepsinmel.ml/">Home</a></li>
                             <li><a href="introduction.php">Living Cost Calculator</a></li>
+							<li><a href="Bills.php">Bills</a></li>
                             <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Student Support</a></li>
                             <li><a href="comparsion.html">Compare with Shanghai</a></li>
                       <!--       <li><a href="#pred">Prediction</a></li>
@@ -305,6 +306,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="display: none;"><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="introduction.php">Living Cost Calculator</a></li>
+									<li><a href="Bills.php">Bills</a></li>
                                     <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Student Support</a></li>
                                     <li><a href="comparsion.html">Compare with Shanghai</a></li>
                         <!--             <li><a href="#">Prediction</a></li>
