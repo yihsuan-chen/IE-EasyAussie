@@ -25,7 +25,21 @@
 
 
 
-	if ($q !== '') {
+	// if ($q !== '') {
+	// 	$q = strtolower($q);
+	// 	$len = strlen($q);
+	// 	foreach ($newPlace as $person) {
+	// 		if (stristr($q, substr($person, 0, $len))){
+	// 			if ($suggestion === '') {
+	// 				$suggestion = $person;
+	// 			} else {
+	// 				$suggestion .= "<br> $person";
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+		if ($q !== '') {
 		$q = strtolower($q);
 		$len = strlen($q);
 		foreach ($newPlace as $person) {
@@ -33,7 +47,7 @@
 				if ($suggestion === '') {
 					$suggestion = $person;
 				} else {
-					$suggestion .= "<br> $person";
+					$suggestion .= "<option>$person<option> <br>";
 				}
 			}
 		}
