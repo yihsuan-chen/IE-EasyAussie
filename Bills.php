@@ -81,12 +81,33 @@
             border: 0px solid #ccc;
             border-top: none;
         }
+        .btn-primary {
+            background-color: #4285f4 !important;
+            color: #fff; }
+        .btn-primary:hover {
+            background-color: #5a95f5;
+            color: #fff; }
+        .btn-primary:focus, .btn-primary.focus {
+            -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+        .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+            background-color: #0b51c5; }
+        .btn-primary.dropdown-toggle {
+            background-color: #4285f4 !important; }
+        .btn-primary.dropdown-toggle:hover, .btn-primary.dropdown-toggle:focus {
+            background-color: #5a95f5 !important; }
+        .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active,
+        .show > .btn-primary.dropdown-toggle {
+            -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            background-color: #0b51c5 !important; }
+        .btn-primary:not([disabled]):not(.disabled):active:focus, .btn-primary:not([disabled]):not(.disabled).active:focus,
+        .show > .btn-primary.dropdown-toggle:focus {
+            -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); }
+
     </style>
-    <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
-    <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
-    <link href="jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
-    <script src="jQueryAssets/jquery-1.11.1.min.js"></script>
-    <script src="jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+
 </head>
 <body>
 <!--nav-->
@@ -137,7 +158,6 @@
         </ul>
     </div>
 </nav>
-<!-- <button type="button" class="btn btn-primary btn" id="nextBtn" onclick="nextPrev(1)" style="width:80px; margin-left: 10px;">Next</button> -->
 <div class="container" style="height: 550px;width: 75%;text-align: center; background-color: white; border-radius: 20px; box-shadow: 4px 4px 20px lightblue;">
     <p><h4>Calculate the approximate cost of monthly bills based on usage</h4></p>
     <div class="tab" style="display: inline-block; border-radius: 10px;box-shadow: 4px 4px 20px lightblue;">
@@ -153,29 +173,29 @@
                 <h2>Phone Usage</h2>
                 How much data would you need?
                 <div id="RadioButtons1">
-                    <input type="radio" name="RadioButtons1" id="Radio1" value="5">
+                    <input type="radio" name="RadioButtons1" id="Radio1" value="2">
                     <label for="Radio1">2GB</label>
-                    <input type="radio" name="RadioButtons1" id="Radio2" value="12">
+                    <input type="radio" name="RadioButtons1" id="Radio2" value="6">
                     <label for="Radio2">6GB</label>
-                    <input type="radio" name="RadioButtons1" id="Radio3" value="15">
+                    <input type="radio" name="RadioButtons1" id="Radio3" value="10">
                     <label for="Radio3">10GB</label>
                 </div>
                 Do you require international calling?
                 <div id="RadioButtons2">
-                    <input type="radio" name="RadioButtons2" id="Radio4" value="20">
+                    <input type="radio" name="RadioButtons2" id="Radio4" value="1">
                     <label for="Radio4">Yes</label>
                     <input type="radio" name="RadioButtons2" id="Radio5" value="0">
                     <label for="Radio5">No</label>
                 </div>
                 <div>
-                    <button id="Button1" onClick="phonecost()">Calculate</button>
+                    <button class="btn btn-primary btn" id="Button1" onClick="phonecost()">Calculate</button>
                 </div>
                 <div> Average cost per month is:<span id="billval"></span></div>
-                <div>
-                    <button
-                            id="Button3" onclick="document.getElementById('popup')">Recommendation
-                    </button>
-                </div>
+                <!--<div>
+                  <button
+                      id="Button3" onclick="document.getElementById('popup')">Recommendation
+                  </button>
+                </div> -->
             </div>
         </div>
     </div>
@@ -187,15 +207,17 @@
                 <h3>Internet</h3>
                 How much data do you need per month?
                 <div id="RadioButtons3">
-                    <input type="radio" name="RadioButtons3" id="Radio6" onClick="lowinternet()">
-                    <label for="Radio6">200GB</label>
-                    <input type="radio" name="RadioButtons3" id="Radio7" onClick="midinternet()">
+                    <input type="radio" name="RadioButtons3" id="Radio6" value="100">
+                    <label for="Radio6">100GB</label>
+                    <input type="radio" name="RadioButtons3" id="Radio7" value="500">
                     <label for="Radio7">500GB</label>
-                    <input type="radio" name="RadioButtons3" id="Radio8" onClick="unlimited()">
+                    <input type="radio" name="RadioButtons3" id="Radio8" value="Unlimited">
                     <label for="Radio8">Unlimited</label>
                 </div>
-                <br>
-                <div> Average cost per month is:<b><span id="myText"></span></b></div>
+                <div>
+                    <button class="btn btn-primary btn" id="Button2" onClick="intbill()">Calculate</button>
+                </div>
+                <div> Average cost per month is:<span id="intbillval"></span></div>
             </div>
         </div>
     </div>
@@ -232,7 +254,7 @@
                     <input type="radio" name="RadioButtons10" id="Radio25" value="0">
                     <label for="Radio25">No</label>
                 </div>
-                <button id="Button2" onClick="eleccal()">Calculate</button>
+                <button class="btn btn-primary btn" id="Button2" onClick="eleccal()">Calculate</button>
                 <div> Your usage<span id="elecost"></span></div>
             </div>
         </div>
@@ -243,117 +265,197 @@
             <div class="putimage">
                 <img style="margin-top: 15px;" src="img/water.jpg">
                 <h3>Water</h3>
-                <p>My Usage is:</p>
+                No. of residents
                 <div id="RadioButtons6">
                     <input type="radio" name="RadioButtons6" id="Radio15">
-                    <label for="Radio15">Low</label>
+                    <label for="Radio15">1</label>
                     <input type="radio" name="RadioButtons6" id="Radio16">
-                    <label for="Radio16">Medium</label>
+                    <label for="Radio16">2</label>
                     <input type="radio" name="RadioButtons6" id="Radio17">
-                    <label for="Radio17">High</label>
+                    <label for="Radio17">3</label>
                 </div>
-                <br>
-                <div> Average cost per month is:</div>
+                Dishwasher:
+                <div id="RadioButtons11">
+                    <input type="radio" name="RadioButtons11" id="Radio26" value="1">
+                    <label for="Radio26">Yes</label>
+                    <input type="radio" name="RadioButtons11" id="Radio27" value="0">
+                    <label for="Radio27">No</label>
+                </div>
+                <div class="frequency">
+                    Frequency(no. of times per week):
+                    <select id="frequency" name="frequency">
+                        <option checked="checked" value="default">Please select</option>
+                        <option value="0">1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                        <option value="4">5</option>
+                        <option value="5">6</option>
+                        <option value="6">7</option>
+                    </select>
+                </div>
+                Washing Machine:
+                <div id="RadioButtons12">
+                    <input type="radio" name="RadioButtons12" id="Radio28" value="1">
+                    <label for="Radio28">Yes</label>
+                    <input type="radio" name="RadioButtons12" id="Radio29" value="0">
+                    <label for="Radio29">No</label>
+                </div>
+                <div class="frequency">
+                    Frequency(no. of times per week):
+                    <select id="frequency" name="frequency">
+                        <option checked="checked" value="default">Please select</option>
+                        <option value="0">1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                        <option value="4">5</option>
+                        <option value="5">6</option>
+                        <option value="6">7</option>
+                    </select>
+                </div>
+                Evaporative Cooler:
+                <div id="RadioButtons13">
+                    <input type="radio" name="RadioButtons13" id="Radio30" value="1">
+                    <label for="Radio30">Yes</label>
+                    <input type="radio" name="RadioButtons13" id="Radio31" value="0">
+                    <label for="Radio31">No</label>
+                </div>
+                No. of hours a day:
+                <select id="frequency" name="frequency">
+                    <option checked="checked" value="default">Please select</option>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>
+                    <option value="3">4</option>
+                    <option value="4">5</option>
+                    <option value="5">6</option>
+                    <option value="6">7</option>
+                </select>
             </div>
         </div>
-        <script>
-            function openEvent(evt, Name) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
+    </div>
+    <script>
+        function openEvent(evt, Name) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(Name).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        $(function() {
+            $( "#RadioButtons1" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons2" ).buttonset();
+        });
+        $(function() {
+            $( "#Button1" ).button();
+        });
+        $(function() {
+            $( "#Button2" ).button();
+        });
+        $(function() {
+            $( "#Button3" ).button();
+        });
+        $(function() {
+            $( "#RadioButtons3" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons4" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons5" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons6" ).buttonset();
+        });
+
+        function eleccal(){
+
+            var eh = document.querySelector('input[name=RadioButtons7]:checked').value;
+            var ac = document.querySelector('input[name=RadioButtons8]:checked').value;
+            var uh = document.querySelector('input[name=RadioButtons9]:checked').value;
+            var ewh = document.querySelector('input[name=RadioButtons10]:checked').value;
+            var finalelec = parseInt(eh) + parseInt(ac) + parseInt(uh) + parseInt(ewh);
+            if (finalelec == 4) {
+                var highcost = 335;
+                document.getElementById("elecost").innerHTML = 'is high and it the average monthly bill would be $'+highcost;
+            }
+            else if (finalelec == 2 || finalelec == 3) {
+                var mediumcost = 205;
+                document.getElementById("elecost").innerHTML = 'is medium and it the average monthly bill would be $'+mediumcost;
+            }
+            else {
+                var lowcost = 80;
+                document.getElementById("elecost").innerHTML = 'is low and it the average monthly bill would be $'+lowcost;
+            }
+        }
+
+        function phonecost(){
+
+            var datacost = document.querySelector('input[name=RadioButtons1]:checked').value;
+            var intercal = document.querySelector('input[name=RadioButtons2]:checked').value;
+            //var phonetotalbill = parseInt(datacost) + parseInt(intercal);
+            //document.getElementById("billval").innerHTML = phonetotalbill+'$';
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("billval").innerHTML = this.responseText;
                 }
-                tablinks = document.getElementsByClassName("tablinks");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+            };
+            xmlhttp.open("GET","phonedb.php?q=" +datacost + "&r=" +intercal, true);
+
+            xmlhttp.send();
+        }
+        function intbill() {
+            var internet = document.querySelector('input[name=RadioButtons3]:checked').value;
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("intbillval").innerHTML = this.responseText;
                 }
-                document.getElementById(Name).style.display = "block";
-                evt.currentTarget.className += " active";
-            }
-            $(function() {
-                $( "#RadioButtons1" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons2" ).buttonset();
-            });
-            $(function() {
-                $( "#Button1" ).button();
-            });
-            $(function() {
-                $( "#Button3" ).button();
-            });
-            $(function() {
-                $( "#RadioButtons3" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons4" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons5" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons6" ).buttonset();
-            });
+            };
+            xmlhttp.open("GET","internetdb.php?q=" +internet, true);
 
-            function eleccal(){
+            xmlhttp.send();
 
-                var eh = document.querySelector('input[name=RadioButtons7]:checked').value;
-                var ac = document.querySelector('input[name=RadioButtons8]:checked').value;
-                var uh = document.querySelector('input[name=RadioButtons9]:checked').value;
-                var ewh = document.querySelector('input[name=RadioButtons10]:checked').value;
-                var finalelec = parseInt(eh) + parseInt(ac) + parseInt(uh) + parseInt(ewh);
-                if (finalelec == 4) {
-                    var highcost = 335;
-                    document.getElementById("elecost").innerHTML = 'is high and it the average monthly bill would be $'+highcost;
-                }
-                else if (finalelec == 2 || finalelec == 3) {
-                    var mediumcost = 205;
-                    document.getElementById("elecost").innerHTML = 'is medium and it the average monthly bill would be $'+mediumcost;
-                }
-                else {
-                    var lowcost = 80;
-                    document.getElementById("elecost").innerHTML = 'is low and it the average monthly bill would be $'+lowcost;
-                }
-            }
+        }
 
-            function phonecost(){
-
-                var datacost = document.querySelector('input[name=RadioButtons1]:checked').value;
-                var intercal = document.querySelector('input[name=RadioButtons2]:checked').value;
-                var phonetotalbill = parseInt(datacost) + parseInt(intercal);
-
-                document.getElementById("billval").innerHTML = phonetotalbill+'$';
-            }
-            function unlimited() {
-                var  cost= 80;
-                document.getElementById("myText").innerHTML = '$'+cost;
-            }
-
-            function midinternet() {
-                var  midintr= 58;
-                document.getElementById("myText").innerHTML = '$'+midintr;
-            }
-
-            function lowinternet() {
-                var  lowintr= 50;
-                document.getElementById("myText").innerHTML = '$'+lowintr;
-            }
-            $(function() {
-                $( "#RadioButtons7" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons8" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons9" ).buttonset();
-            });
-            $(function() {
-                $( "#RadioButtons10" ).buttonset();
-            });
-            $(function() {
-                $( "#Button2" ).button();
-            });
-        </script>
+        $(function() {
+            $( "#RadioButtons7" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons8" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons9" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons10" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons11" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons12" ).buttonset();
+        });
+        $(function() {
+            $( "#RadioButtons13" ).buttonset();
+        });
+    </script>
 
 </body>
 </html>
