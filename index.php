@@ -48,21 +48,6 @@
       #navbar ul li a:hover{
           color: gray;
       }
-      #btn{
-          background-color: rgb(78,191,233);
-          border-color: rgb(78,191,233);
-          font-size: 16px;
-          color: white; 
-          border-radius: 5px; 
-          margin: 0;
-          width: 45px;
-          height: 120px;
-          font-weight: bolder;
-          position: fixed;
-          right: -10px;
-          top: 40%;
-          opacity: 0.5;
-    }
     </style>
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
     <script>
@@ -281,7 +266,7 @@
 <!--nav-->
 
 <body>
-    <div class="navbar-wrapper" style="position: fixed;">
+    <div class="navbar-wrapper col-md-12 col-xs-12 col-lg-12" style="position: fixed;">
         <div>
             <nav class="navbar navbar-inverse navbar-static-top" style="background-color: white; color: white; border: 1px solid rgb(224,227,230);margin-top: -20px;box-shadow: 4px 4px 20px lightblue;">
                 <div class="container">
@@ -301,7 +286,7 @@
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="costFont"><span class="caret"></span>&nbsp;&nbsp;Living Cost Calculator</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="introduction.php">Calculator</a></li>
-                                    <li><a href="Bills.html">Other expenses</a></li>
+                                    <li><a href="Bills.php">Other expenses</a></li>
                                   </ul>
                                 </li>
 
@@ -369,7 +354,7 @@
                     <div class="carousel-caption">
                         <h1 style="font-size:46px; font-weight: bolder;">Need student support to make a change?</h1>
                         <p style="font-size: 17px;">We provide information for helping you find a suitable suburb based on distance to your campus, rent cost, convenient level, and food service level.</p>
-                        <p><a class="btn btn-lg btn-primary" href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/" role="button">Student Support</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/" role="button">Find a Suburb</a></p>
                     </div>
                 </div>
             </div>
@@ -427,18 +412,18 @@
                 <p><a class="btn btn-default" href="introduction.php" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/"><img src="img/bulb2.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
+                <a href="TipsList.html"><img src="img/bulb2.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
                 <h2>Guidance</h2>
                 <p>As an international student who is new to Melbourne, experiencing Melbourne's lifestyle is the first step in integrating into local life. Here we provide the student guidance for you with some lifestyle tips.</p>
                 <br>
-                <p><a class="btn btn-default" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="TipsList.html" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
                 <a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/"><img src="img/location.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
                 <h2>Find a Suburb</h2>
                 <p>Looking for some place to live with great convenient or close to your university? With a personalized recommendation system, you can find some suggestions based on your own spending habits.</p>
                 <br>
-                <p><a class="btn btn-default" href="comparison.html" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
   <!-----------------------------comparision--------------------------------------------->
             <div class="col-lg-6" style="text-align: center; padding-left: 90px;">
@@ -455,7 +440,7 @@
                 <h2>Prediction</h2>
                 <p>Our external economic environment is always full of uncertainty. In general, prices rise every year with a certain rate of inflation. We provide you with a visualized prediction report with economic data. </p>
                 <br>
-                <p><a class="btn btn-default" href="comparison.html" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="prediction.php" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
 <!----------------------------------------------------------------------------------------->
         </div><!-- /.row -->
@@ -491,10 +476,8 @@
         <!-- FOOTER -->
         <footer class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="height: 50px; width:100%;">
             <p class="pull-right" style="line-height: 50px;"><a href="#">Back to top</a></p>
-            <p style="line-height: 50px;">&copy;2019 by 'First steps in Melbourne'. Proudly created with EasyAussie team. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p style="line-height: 50px;">&copy;2019 by 'First steps in Melbourne'. Proudly created with EasyAussie team. &middot;</p>
         </footer>
-
-        <a href='sendgrid-php/feedback.php'><button type="button" id="btn" class="" data-button-for="2a8f783514fa91e03666bbb8c444ac4a0b967074" title="Feedback" tabindex="0" style="opacity: 1; visibility: visible;" onmousemove="btnAction()" onmouseout="btnOut()"><i class="mopicon mopicon-commenting-o " icon="fa-commenting-o"><svg viewBox="0 0 28 28"><path d="M10 14c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM16 14c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM22 14c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM14 6c-6.5 0-12 3.656-12 8 0 2.328 1.563 4.547 4.266 6.078l1.359 0.781-0.422 1.5c-0.297 1.109-0.688 1.969-1.094 2.688 1.578-0.656 3.016-1.547 4.297-2.672l0.672-0.594 0.891 0.094c0.672 0.078 1.359 0.125 2.031 0.125 6.5 0 12-3.656 12-8s-5.5-8-12-8zM28 14c0 5.531-6.266 10-14 10-0.766 0-1.531-0.047-2.266-0.125-2.047 1.813-4.484 3.094-7.187 3.781-0.562 0.156-1.172 0.266-1.781 0.344h-0.078c-0.313 0-0.594-0.25-0.672-0.594v-0.016c-0.078-0.391 0.187-0.625 0.422-0.906 0.984-1.109 2.109-2.047 2.844-4.656-3.219-1.828-5.281-4.656-5.281-7.828 0-5.516 6.266-10 14-10v0c7.734 0 14 4.484 14 10z" fill="currentColor"></path></svg></i><span style="writing-mode: vertical-lr; transform: rotate(-180deg);">Feedback</span></button></a>
     </div>
         <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
         <script>
