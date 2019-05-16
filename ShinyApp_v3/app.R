@@ -12,6 +12,7 @@ library(raster)
 library(leaflet.extras)
 library(shinymaterial)
 
+
 #open on GCP
 #library(bigrquery)
 #setwd("/home/easyaussie/ShinyApps/find_a_suburb")
@@ -141,12 +142,16 @@ server <-function(input, output, session) {
     tagList(ref_3,"")
   })
   
+  
+  ## if else for this table????
   output$table_recom <- DT::renderDataTable({
-    datatable( filterdata()
+    DT::datatable( filterdata()
                , class = "cell-border compact hover order-column stripe",options=list(pageLength = 5, lengthMenu = c(5,10), searching = FALSE)
-               , rownames = FALSE,  colnames = c("Suburb", "Weekly rent per one room in flat($)","Weekly rent per one room in house($)","Distance to your campus (km)","Convenient Level","Food Service Level")
-    )
-  })
+               , rownames = FALSE
+               ,colnames = c("Suburb", "Weekly rent per one room in flat($)","Weekly rent per one room in house($)","Distance to your campus (km)","Convenience Level","Food Service Level")
+    ) 
+#    %>%formatStyle(background = 'white',color='black')
+  }) 
  
   
   output$sitemap <- renderLeaflet( {
@@ -176,12 +181,12 @@ ui <- fluidPage(
                  getTool('menu5.html'),   #menu bar
                  br(),br(),br(),   
                 # Application title
-                h2("Find your ideal location", align="center", style= "font-family: 'Arial Black'; font-size: 55px; color: rgb(51,122,183);"),
+                headerPanel(p("Find Your Ideal Location!", align="center", style= "font-family: 'Arial Black'; font-size: 55px; color: rgb(51,122,183);")),
                 #h4("Do you think you spend too much on your accommodation?",align="center"), 
                 #h4("We provide information for helping you find a suitable suburb based on distance to your campus, rent cost, convenient level, and food service level.",align="center"), 
                 #h4("rent cost, convenient level, and food service level.",align="center"),
                 #h4("Adjust the panel on the left based on your situation!",align="center"),
-                br(),
+                br(),br(),
                 sidebarPanel(
                   h4("Where do you study?"),
                   selectInput("select_uni", "University:",  
@@ -213,7 +218,7 @@ ui <- fluidPage(
                                        
                                            box(width = 12,status = "primary",solidHeader = TRUE,
                                         title=p(icon("star"),"List of Recommended Suburbs",style= "font-family:arial; font-weight:bold;font-size: 20px") ,
-                                       DT::dataTableOutput("table_recom")),
+                                        div(style = 'overflow-x: scroll', DT::dataTableOutput("table_recom", width = "auto"))),
                                        br(), 
                                        #p("Map around",style= "font-family:arial; font-weight:bold;font-size: 20px"), 
                                        box(width = 12,status = "primary",solidHeader = TRUE,
@@ -262,20 +267,19 @@ ui <- fluidPage(
                                             p("The distance is calculated by the latitude and longitude of the center of the given suburb and the campus location in google map.",style = "font-family: 'Arial'; font-size: 14px"),
                                             
                                             
-                                            p(icon("hand-point-right"),"Convenient level:", style = "font-family: 'Arial Black'; font-size: 16px"),
-                                            p('Number of business from all kinds of industry registered to government such as retail trade, health care, and financial services. This factor could help you understand more about the prosperity of a suburb. For people who do not have a car, they would prefer to live in a suburb with retail stores and supermarkets nearby. "Very High" means the number of services is higher 8000. "High" means the number of services is between 2200 and 8000. "Median" means the number of services is between 1200 and 220. "Low" means the number of services is between 600 and 1200. "Very Low" means the number of services is lower than 600.'
+                                            p(icon("hand-point-right"),"Convenience level:", style = "font-family: 'Arial Black'; font-size: 16px"),
+                                            p('Number of business from all kinds of industry registered to government such as retail trade, health care, and financial services. This factor could help you understand more about the prosperity of a suburb. For people who do not have a car, they would prefer to live in a suburb with retail stores and supermarkets nearby. "Very High" means the number of services is higher 8000. "High" means the number of services is between 2200 and 8000 in the given suburb. "Medium" means the number of services is between 1200 and 2200. "Low" means the number of services is between 600 and 1200. "Very Low" means the number of services is lower than 600.'
                                               , style = "font-family: 'Arial'; font-size: 14px"),
                                             
                                             p(icon("hand-point-right"),"Food service level:",  style = "font-family: 'Arial Black'; font-size: 16px"),
-                                            p('Number of accommodation and food service business registered to government. We assume the number of accommodation and food service are in direct proportion. For people who do not want to cook at home, this factor would be an important index to help them find a suitable suburb with many food options. "Very High" means the number of services is higher 1000. "High" means the number of services is between 110 and 1000. "Median" means the number of services is between 50 and 110. "Low" means the number of services is between 20 and 50. "Very Low" means the number of services is lower than 20.'
+                                            p('Number of accommodation and food service business registered to government. We assume the number of accommodation and food service are in direct proportion. For people who do not want to cook at home, this factor would be an important index to help them find a suitable suburb with many food options. "Very High" means the number of services is higher 1000 in the given suburb. "High" means the number of services is between 110 and 1000. "Medium" means the number of services is between 50 and 110. "Low" means the number of services is between 20 and 50. "Very Low" means the number of services is lower than 20.'
                                               , style = "font-family: 'Arial'; font-size: 14px")
                                             )
                                         ),
                                        
                                         box(width = 12, title = p(icon('database'),"Data sources",style = "font-family: 'Arial Black'; font-size: 20px"), status = "primary", solidHeader = TRUE,
-                                       p("[1] Median rent price by suburbs in Victoria",style = "font-family: 'Arial Black'; font-size: 16px" ), 
-                                       
-                                       p("The Victorian Government Data Directory,", uiOutput("ref1"),
+                                            div(style = 'overflow-x: scroll', p("[1] Median rent price by suburbs in Victoria",style = "font-family: 'Arial Black'; font-size: 16px" ), 
+                                           p("The Victorian Government Data Directory,", uiOutput("ref1"),
                                          style = "font-family: 'Arial'; font-size: 14px"
                                          ), 
                                        p("[2] Data by Region (2012-17)", style = "font-family: 'Arial Black'; font-size: 16px") ,
@@ -283,7 +287,7 @@ ui <- fluidPage(
                                        
                                        p("[3] Australian Postcode Location Data", style = "font-family: 'Arial Black'; font-size: 16px") ,
                                        p("Released by CorraApps,",uiOutput("ref3"),style = "font-family: 'Arial'; font-size: 14px")
-                                       )   
+                                       ))   
                                       
                               )))
                                          
@@ -297,5 +301,4 @@ ui <- fluidPage(
 
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
-
 
