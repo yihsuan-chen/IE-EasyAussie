@@ -24,9 +24,10 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8">
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!--    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- test -->
     <meta name="description" content="">
     <meta name="author" content="">
@@ -105,7 +106,7 @@
                 {
                   coords:{lat:lat[i],lng:lng[i]},
                   content:"<h5 style='text-align:center;'>" + content[i] + '</h5>' +  'Region: ' + reg[i] +  '<br>' + 'Average Rent: ' + cost[i] + '<br>' + "<a target='_blank' href= '"+website[i]+"'>" + 'View suburb detail on googleMap' + "</a>",
-                  iconImage:'img/school4.png'
+                  
                 }
               );
           }
@@ -294,11 +295,11 @@
                             <li class="dropdown" id="subSupDrag" onclick="calculatorDrag()">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="stuSup"><span class="caret"></span>&nbsp;&nbsp;Student Support</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Find a Suburb</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Find a Suburb</a></li>
                                     <li><a href="TipsList.html">Guidance</a></li>
                                   </ul>
                                 </li>
-                            <li><a href="comparison.html">Compare with Shanghai</a></li>
+                            <li><a href="comparison.html">Comparison</a></li>
                             <li><a href="prediction.php">Prediction</a></li>
                            <!--  <li class="dropdown" id="preDrag" onclick="calculatorDrag()">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="preSup"><span class="caret"></span>&nbsp;&nbsp;Prediction</a>
@@ -313,8 +314,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="display: none;"><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="introduction.php">Living Cost Calculator</a></li>
-                                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Student Support</a></li>
-                                    <li><a href="comparison.html">Compare with Shanghai</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Student Support</a></li>
+                                    <li><a href="comparison.html">Comparison</a></li>
                                     <li><a href="prediction.php">Prediction</a></li>
                                     <!--<li><a href="#">About us</a></li> -->
                                 </ul>
@@ -354,7 +355,7 @@
                     <div class="carousel-caption">
                         <h1 style="font-size:46px; font-weight: bolder;">Need student support to make a change?</h1>
                         <p style="font-size: 17px;">We provide information for helping you find a suitable suburb based on distance to your campus, rent cost, convenient level, and food service level.</p>
-                        <p><a class="btn btn-lg btn-primary" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/" role="button">Find a Suburb</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/" role="button">Find a Suburb</a></p>
                     </div>
                 </div>
             </div>
@@ -379,7 +380,7 @@
         </a>
     </div><!-- /.carousel -->
     <!-- Video -->
-    <div class="iframe" style="overflow: hidden;">
+    <div class="iframe" style="overflow: hidden;text-align: center;">
           <div class="video col-lg-7 col-md-7" style="width: 700px;">
             <iframe width="640" height="340" src="https://www.youtube.com/embed/6Gw70FIB2Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen >
             </iframe>
@@ -393,7 +394,7 @@
             </span>
           </div>
     </div>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;Source from: https://liveinmelbourne.vic.gov.au/</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source from: https://liveinmelbourne.vic.gov.au/</p>
 
     <hr class="featurette-divider" width="1150px" style="margin:auto;">
     <br>
@@ -419,16 +420,16 @@
                 <p><a class="btn btn-default" href="TipsList.html" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/"><img src="img/location.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
+                <a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/"><img src="img/location.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
                 <h2>Find a Suburb</h2>
                 <p>Looking for some place to live with great convenient or close to your university? With a personalized recommendation system, you can find some suggestions based on your own spending habits.</p>
                 <br>
-                <p><a class="btn btn-default" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
   <!-----------------------------comparision--------------------------------------------->
             <div class="col-lg-6" style="text-align: center; padding-left: 90px;">
                 <a href="comparison.html"><img src="img/tianping3.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
-                <h2>Compare with Shanghai</h2>
+                <h2>Comparison</h2>
                 <p style="">For comparing the cost of living in Shanghai to Melbourne, it will show the different percentage and cost. It will be considered about cloth, food, leisure, transport and utilities. </p>
                 <br>
                 <p><a class="btn btn-default" href="comparison.html" role="button">View details &raquo;</a></p>
@@ -448,9 +449,9 @@
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-6" style="margin-top: -120px;">
-                <h2 class="featurette-heading" style="font-size: 55px; color: rgb(51,122,183);font-family: 'poppins';font-weight: bolder;">Make Melbourne be your home</h2>
+                <h2 class="featurette-heading" style="font-size: 55px; color: rgb(51,122,183);font-family: 'poppins';font-weight: bolder;">Make Melbourne your home</h2>
                 <br>
-                <p class="lead">Melbourne is one of the most livable places all over the world. People who are living in Melbourne will enjoy a safe city, world- class education, business opportunities and relaxing and healthy environment. There are some amazing discover that Melbourne has to offer you.</p>
+                <p class="lead">Melbourne is one of the most livable places all over the world. People who are living in Melbourne will enjoy a safe city, world- class education, business opportunities and relaxing and healthy environment. There are some amazing discover that Melbourne has to offer you. <a href="accommodationTips.html">Find More</a></p>
             </div>
             <div class="col-md-6">
                 <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="img/CBD1.jpg" style="width: 500px;height: 300px; border-radius: 20px;">
@@ -461,7 +462,7 @@
             <div class="col-md-7 col-md-push-5" style="margin-top: -30px; margin-top: -120px;">
                 <h2 class="featurette-heading" style="font-size: 55px; color: rgb(51,122,183);font-family: 'poppins';font-weight: bolder;margin-left: 30px;">Discover Melbourne lifestyle</h2>
                 <br>
-                <p class="lead" style="margin-left: 30px;">Discover the new Melbourne life in the southern hemisphere. You will easily find it to indulge in this premium and new lifestyle Melbourne has to provide. As an international student, you can enjoy an easy transition into your new life in Melbourne. Discover more and you will like this new Melbourne lifestyle.</p>
+                <p class="lead" style="margin-left: 30px;">Discover the new Melbourne life in the southern hemisphere. You will easily find it to indulge in this premium and new lifestyle Melbourne has to provide. As an international student, you can enjoy an easy transition into your new life in Melbourne. Discover more and you will like this new Melbourne lifestyle. <a href="OtherTips.html">Find More</a></p>
             </div>
             <div class="col-md-5 col-md-pull-7" >
                 <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="img/run.jpg" style="width: 500px; border-radius: 20px;">

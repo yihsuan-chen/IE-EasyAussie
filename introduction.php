@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>First steps in Melbourne - Introduction</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -55,12 +55,12 @@
                 <li class="dropdown" id="subSupDrag" style="margin-top: 7px;">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="stuSup"><span class="caret"></span>&nbsp;&nbsp;Student Support</a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Find a Suburb</a></li>
+                        <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Find a Suburb</a></li>
                         <li><a href="TipsList.html">Guidance</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="comparison.html" style="color: black;font-size: 16px; margin-top: -3px;">Compare with Shanghai</a>
+                    <a class="nav-link" href="comparison.html" style="color: black;font-size: 16px; margin-top: -3px;">Comparison</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="prediction.php" style="color: black;font-size: 16px; margin-top: -3px;">Prediction</a>
@@ -70,8 +70,8 @@
                     </a>
                     <div class="dropdown-menu dropdown-default">
                         <a class="dropdown-item" href="introduction.php">Living Cost Calculator</a>
-                        <a class="dropdown-item" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Student Support</a>
-                        <a class="dropdown-item" href="comparison.html">Compare with Shanghai</a>
+                        <a class="dropdown-item" href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Student Support</a>
+                        <a class="dropdown-item" href="comparison.html">Comparison</a>
                         <a class="dropdown-item" href="prediction.php">Prediction</a>
                         <!--          <a class="dropdown-item" href="#">Prediction</a>
                         <a class="dropdown-item" href="#">About us</a> -->
@@ -124,11 +124,11 @@
                             <h2 class="modal-title" id="exampleModalLongTitle" style="text-align:left">Measurement in weekly</h2>
                         </div>
                         <p></p>
-                        <span>&nbsp;&nbsp;&nbsp;&nbsp;All the data is processed as weekly measurement. The result also will &nbsp;&nbsp;&nbsp;&nbsp;the weekly total and sperate cost.</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;All the data is processed as weekly measurement. The result also will present the weekly total and sperate cost.</span>
                         <div class="modal-header" style="text-align:left;">
                             <h2 class="modal-title" id="exampleModalLongTitle">Rounding</h2>
                         </div>
-                        <div class="modal-body" style="text-align: left; font-size: 15px;">
+                        <div class="modal-body" style="text-align: left;">
                             Each estimated and overall expense total is rounded down to the nearest dollar expect food expense is rounded down to the nearest dollar with one decimal place.<br><br>
                         </div>
                         <div class="modal-footer">

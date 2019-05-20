@@ -72,6 +72,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/firstStepForm_result.css">
@@ -296,8 +299,8 @@
             <ul class="nav navbar-nav" style="margin-left:20px;">
                 <li><a href="http://www.firststepsinmel.ml">Home</a></li>
                 <li><a href="introduction.php">Living Cost Calculator</a></li>
-                <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Student Support</a></li>
-                <li><a href="comparison.html">Compare with Shanghai</a></li>
+                <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Student Support</a></li>
+                <li><a href="comparison.html">Comparison</a></li>
                 <!--       <li><a href="#pred">Prediction</a></li>
                             <li><a href="#about">About us</a></li> -->
                 <!-------------------------------------------------------------->
@@ -306,7 +309,7 @@
                     <ul class="dropdown-menu">
                         <li class="active"><a href="introduction.php" style="text-decoration: none;">Living Cost Calculator</a></li>
                         <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/">Student Support</a></li>
-                        <li><a href="comparison.html">Compare with Shanghai</a></li>
+                        <li><a href="comparison.html">Comparison</a></li>
                         <!--             <li><a href="#">Prediction</a></li>
                                     <li><a href="#">About us</a></li> -->
                     </ul>
@@ -379,7 +382,7 @@
                         <p style="text-align: left; line-height:2em;">There are many student recommendations and support tips available for international students. This includes some suburb living information which has distance, rental level, living convenience and food service level.</p>
                         <p>Check out student support and see how you reach your goals.</p>
 
-                            <a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/"><button class="btn btn-success btn-lg">Student Support</button></a>
+                            <a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/"><button class="btn btn-success btn-lg">Student Support</button></a>
                             <a href="index.php"><button class="btn btn-success btn-lg">Back to Homepage</button></a>
                         </p>
                     </div>

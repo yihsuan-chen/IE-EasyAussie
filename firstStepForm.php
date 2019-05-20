@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" src="href/logo.ico">
     <title>First Steps in Melbourne - Cost Of Living Calculator</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -13,12 +16,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Plugin JavaScript file-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
-    <!--   <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <!-- validation-->
-    <!-- <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
-<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script> -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <style type="text/css">
@@ -93,11 +90,11 @@
                             <li class="dropdown" id="subSupDrag" onclick="calculatorDrag()">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="stuSup"><span class="caret"></span>&nbsp;&nbsp;Student Support</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Find a Suburb</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Find a Suburb</a></li>
                                     <li><a href="TipsList.html">Guidance</a></li>
                                   </ul>
                                 </li>
-                           <!--  <li><a href="comparison.html">Compare with Shanghai</a></li> -->
+                           <!--  <li><a href="comparison.html">Comparison</a></li> -->
                             <li><a href="prediction.php">Prediction</a></li>
                            <!--  <li class="dropdown" id="preDrag" onclick="calculatorDrag()">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="preSup"><span class="caret"></span>&nbsp;&nbsp;Prediction</a>
@@ -112,8 +109,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="display: none;"><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="introduction.php">Living Cost Calculator</a></li>
-                                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Student Support</a></li>
-                                    <li><a href="comparison.html">Compare with Shanghai</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Student Support</a></li>
+                                    <li><a href="comparison.html">Comparison</a></li>
                                     <li><a href="prediction.php">Prediction</a></li>
                                     <!--<li><a href="#">About us</a></li> -->
                                 </ul>
@@ -134,6 +131,7 @@
     <form id="regForm" name="submit" method="POST" action="firstStepResult.php" style=" position: absolute; left:0px;right: 0px; margin:50px auto; height: 400px; border-radius: 20px; box-shadow: 4px 4px 20px lightblue; background-color: white;">
         <div class="form-group form1 tab" style="height: 100px">
             <label for="" style="font-weight: bold;font-size: 35px;">1. In which university will you be studying in Melbourne?</label>
+            <br>
             <select class="form-control-lg universityList" id="university" name="university" style="border-radius: 3px; height: 35px; border:1px solid lightgray; margin-top: 5px;">
                 <option checked="checked" value="default">Please select</option>
                 <option value="0">Monash University</option>
