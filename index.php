@@ -24,9 +24,10 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="utf-8">
+    <!-- <meta charset="utf-8"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!--    <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- test -->
     <meta name="description" content="">
     <meta name="author" content="">
@@ -48,21 +49,6 @@
       #navbar ul li a:hover{
           color: gray;
       }
-      #btn{
-          background-color: rgb(78,191,233);
-          border-color: rgb(78,191,233);
-          font-size: 16px;
-          color: white; 
-          border-radius: 5px; 
-          margin: 0;
-          width: 45px;
-          height: 120px;
-          font-weight: bolder;
-          position: fixed;
-          right: -10px;
-          top: 40%;
-          opacity: 0.5;
-    }
     </style>
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
     <script>
@@ -120,7 +106,7 @@
                 {
                   coords:{lat:lat[i],lng:lng[i]},
                   content:"<h5 style='text-align:center;'>" + content[i] + '</h5>' +  'Region: ' + reg[i] +  '<br>' + 'Average Rent: ' + cost[i] + '<br>' + "<a target='_blank' href= '"+website[i]+"'>" + 'View suburb detail on googleMap' + "</a>",
-                  iconImage:'img/school4.png'
+                  
                 }
               );
           }
@@ -281,7 +267,7 @@
 <!--nav-->
 
 <body>
-    <div class="navbar-wrapper" style="position: fixed;">
+    <div class="navbar-wrapper col-md-12 col-xs-12 col-lg-12" style="position: fixed;">
         <div>
             <nav class="navbar navbar-inverse navbar-static-top" style="background-color: white; color: white; border: 1px solid rgb(224,227,230);margin-top: -20px;box-shadow: 4px 4px 20px lightblue;">
                 <div class="container">
@@ -301,7 +287,7 @@
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="costFont"><span class="caret"></span>&nbsp;&nbsp;Living Cost Calculator</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="introduction.php">Calculator</a></li>
-                                    <li><a href="Bills.html">Other expenses</a></li>
+                                    <li><a href="Bills.php">Other expenses</a></li>
                                   </ul>
                                 </li>
 
@@ -309,11 +295,11 @@
                             <li class="dropdown" id="subSupDrag" onclick="calculatorDrag()">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="stuSup"><span class="caret"></span>&nbsp;&nbsp;Student Support</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Find a Suburb</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Find a Suburb</a></li>
                                     <li><a href="TipsList.html">Guidance</a></li>
                                   </ul>
                                 </li>
-                            <li><a href="comparison.html">Compare with Shanghai</a></li>
+                            <li><a href="comparison.html">Comparison</a></li>
                             <li><a href="prediction.php">Prediction</a></li>
                            <!--  <li class="dropdown" id="preDrag" onclick="calculatorDrag()">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: black;" id="preSup"><span class="caret"></span>&nbsp;&nbsp;Prediction</a>
@@ -328,8 +314,8 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="display: none;"><span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="introduction.php">Living Cost Calculator</a></li>
-                                    <li><a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/">Student Support</a></li>
-                                    <li><a href="comparison.html">Compare with Shanghai</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Student Support</a></li>
+                                    <li><a href="comparison.html">Comparison</a></li>
                                     <li><a href="prediction.php">Prediction</a></li>
                                     <!--<li><a href="#">About us</a></li> -->
                                 </ul>
@@ -369,7 +355,7 @@
                     <div class="carousel-caption">
                         <h1 style="font-size:46px; font-weight: bolder;">Need student support to make a change?</h1>
                         <p style="font-size: 17px;">We provide information for helping you find a suitable suburb based on distance to your campus, rent cost, convenient level, and food service level.</p>
-                        <p><a class="btn btn-lg btn-primary" href="http://www.firststepsinmel.ml:3838/easyaussie/recommendation/" role="button">Student Support</a></p>
+                        <p><a class="btn btn-lg btn-primary" href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/" role="button">Find a Suburb</a></p>
                     </div>
                 </div>
             </div>
@@ -394,7 +380,7 @@
         </a>
     </div><!-- /.carousel -->
     <!-- Video -->
-    <div class="iframe" style="overflow: hidden;">
+    <div class="iframe" style="overflow: hidden;text-align: center;">
           <div class="video col-lg-7 col-md-7" style="width: 700px;">
             <iframe width="640" height="340" src="https://www.youtube.com/embed/6Gw70FIB2Ss" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen >
             </iframe>
@@ -408,7 +394,7 @@
             </span>
           </div>
     </div>
-    <p>&nbsp;&nbsp;&nbsp;&nbsp;Source from: https://liveinmelbourne.vic.gov.au/</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Source from: https://liveinmelbourne.vic.gov.au/</p>
 
     <hr class="featurette-divider" width="1150px" style="margin:auto;">
     <br>
@@ -427,23 +413,23 @@
                 <p><a class="btn btn-default" href="introduction.php" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/"><img src="img/bulb2.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
+                <a href="TipsList.html"><img src="img/bulb2.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
                 <h2>Guidance</h2>
                 <p>As an international student who is new to Melbourne, experiencing Melbourne's lifestyle is the first step in integrating into local life. Here we provide the student guidance for you with some lifestyle tips.</p>
                 <br>
-                <p><a class="btn btn-default" href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="TipsList.html" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
-                <a href="http://www.firststepsinmel.ml:3838/easyaussie/find_a_suburb/"><img src="img/location.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
+                <a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/"><img src="img/location.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
                 <h2>Find a Suburb</h2>
                 <p>Looking for some place to live with great convenient or close to your university? With a personalized recommendation system, you can find some suggestions based on your own spending habits.</p>
                 <br>
-                <p><a class="btn btn-default" href="comparison.html" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
   <!-----------------------------comparision--------------------------------------------->
             <div class="col-lg-6" style="text-align: center; padding-left: 90px;">
                 <a href="comparison.html"><img src="img/tianping3.png" alt="Generic placeholder image" width="140" height="140" style="width: 80px;height: 80px;"></a>
-                <h2>Compare with Shanghai</h2>
+                <h2>Comparison</h2>
                 <p style="">For comparing the cost of living in Shanghai to Melbourne, it will show the different percentage and cost. It will be considered about cloth, food, leisure, transport and utilities. </p>
                 <br>
                 <p><a class="btn btn-default" href="comparison.html" role="button">View details &raquo;</a></p>
@@ -455,7 +441,7 @@
                 <h2>Prediction</h2>
                 <p>Our external economic environment is always full of uncertainty. In general, prices rise every year with a certain rate of inflation. We provide you with a visualized prediction report with economic data. </p>
                 <br>
-                <p><a class="btn btn-default" href="comparison.html" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="prediction.php" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
 <!----------------------------------------------------------------------------------------->
         </div><!-- /.row -->
@@ -463,9 +449,9 @@
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-6" style="margin-top: -120px;">
-                <h2 class="featurette-heading" style="font-size: 55px; color: rgb(51,122,183);font-family: 'poppins';font-weight: bolder;">Make Melbourne be your home</h2>
+                <h2 class="featurette-heading" style="font-size: 55px; color: rgb(51,122,183);font-family: 'poppins';font-weight: bolder;">Make Melbourne your home</h2>
                 <br>
-                <p class="lead">Melbourne is one of the most livable places all over the world. People who are living in Melbourne will enjoy a safe city, world- class education, business opportunities and relaxing and healthy environment. There are some amazing discover that Melbourne has to offer you.</p>
+                <p class="lead">Melbourne is one of the most livable places all over the world. People who are living in Melbourne will enjoy a safe city, world- class education, business opportunities and relaxing and healthy environment. There are some amazing discover that Melbourne has to offer you. <a href="accommodationTips.html">Find More</a></p>
             </div>
             <div class="col-md-6">
                 <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="img/CBD1.jpg" style="width: 500px;height: 300px; border-radius: 20px;">
@@ -476,7 +462,7 @@
             <div class="col-md-7 col-md-push-5" style="margin-top: -30px; margin-top: -120px;">
                 <h2 class="featurette-heading" style="font-size: 55px; color: rgb(51,122,183);font-family: 'poppins';font-weight: bolder;margin-left: 30px;">Discover Melbourne lifestyle</h2>
                 <br>
-                <p class="lead" style="margin-left: 30px;">Discover the new Melbourne life in the southern hemisphere. You will easily find it to indulge in this premium and new lifestyle Melbourne has to provide. As an international student, you can enjoy an easy transition into your new life in Melbourne. Discover more and you will like this new Melbourne lifestyle.</p>
+                <p class="lead" style="margin-left: 30px;">Discover the new Melbourne life in the southern hemisphere. You will easily find it to indulge in this premium and new lifestyle Melbourne has to provide. As an international student, you can enjoy an easy transition into your new life in Melbourne. Discover more and you will like this new Melbourne lifestyle. <a href="OtherTips.html">Find More</a></p>
             </div>
             <div class="col-md-5 col-md-pull-7" >
                 <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image" src="img/run.jpg" style="width: 500px; border-radius: 20px;">
@@ -491,10 +477,8 @@
         <!-- FOOTER -->
         <footer class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="height: 50px; width:100%;">
             <p class="pull-right" style="line-height: 50px;"><a href="#">Back to top</a></p>
-            <p style="line-height: 50px;">&copy;2019 by 'First steps in Melbourne'. Proudly created with EasyAussie team. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+            <p style="line-height: 50px;">&copy;2019 by 'First steps in Melbourne'. Proudly created with EasyAussie team. &middot;</p>
         </footer>
-
-        <a href='sendgrid-php/feedback.php'><button type="button" id="btn" class="" data-button-for="2a8f783514fa91e03666bbb8c444ac4a0b967074" title="Feedback" tabindex="0" style="opacity: 1; visibility: visible;" onmousemove="btnAction()" onmouseout="btnOut()"><i class="mopicon mopicon-commenting-o " icon="fa-commenting-o"><svg viewBox="0 0 28 28"><path d="M10 14c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM16 14c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM22 14c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM14 6c-6.5 0-12 3.656-12 8 0 2.328 1.563 4.547 4.266 6.078l1.359 0.781-0.422 1.5c-0.297 1.109-0.688 1.969-1.094 2.688 1.578-0.656 3.016-1.547 4.297-2.672l0.672-0.594 0.891 0.094c0.672 0.078 1.359 0.125 2.031 0.125 6.5 0 12-3.656 12-8s-5.5-8-12-8zM28 14c0 5.531-6.266 10-14 10-0.766 0-1.531-0.047-2.266-0.125-2.047 1.813-4.484 3.094-7.187 3.781-0.562 0.156-1.172 0.266-1.781 0.344h-0.078c-0.313 0-0.594-0.25-0.672-0.594v-0.016c-0.078-0.391 0.187-0.625 0.422-0.906 0.984-1.109 2.109-2.047 2.844-4.656-3.219-1.828-5.281-4.656-5.281-7.828 0-5.516 6.266-10 14-10v0c7.734 0 14 4.484 14 10z" fill="currentColor"></path></svg></i><span style="writing-mode: vertical-lr; transform: rotate(-180deg);">Feedback</span></button></a>
     </div>
         <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
         <script>
