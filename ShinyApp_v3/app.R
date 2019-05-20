@@ -141,15 +141,18 @@ server <-function(input, output, session) {
   output$ref3 <- renderUI({
     tagList(ref_3,"")
   })
+
+  
+
   
   
   ## if else for this table????
   output$table_recom <- DT::renderDataTable({
     DT::datatable( filterdata()
-               , class = "cell-border compact hover order-column stripe",options=list(pageLength = 5, lengthMenu = c(5,10), searching = FALSE)
+               , class = "cell-border compact hover order-column stripe",options=list(pageLength = 5, info=FALSE,lengthChange = FALSE, searching = FALSE) #lengthMenu = c(5,-1)
                , rownames = FALSE
                ,colnames = c("Suburb", "Weekly rent per one room in flat($)","Weekly rent per one room in house($)","Distance to your campus (km)","Convenience Level","Food Service Level")
-    ) 
+    )
 #    %>%formatStyle(background = 'white',color='black')
   }) 
  
@@ -179,14 +182,14 @@ ui <- fluidPage(
 #),
 #theme =  shinytheme("journal"), 
                  getTool('menu5.html'),   #menu bar
-                 br(),br(),br(),   
-                # Application title
-                headerPanel(p("Find Your Ideal Location!", align="center", style= "font-family: 'Arial Black'; font-size: 55px; color: rgb(51,122,183);")),
+                 br(),br(),br(), br(), br(),   
+                # Application title   
+                h2("Find Your Ideal Location!", align="center", style= "font-family: 'Arial Black'; font-size: 55px; color: rgb(51,122,183);"),
                 #h4("Do you think you spend too much on your accommodation?",align="center"), 
                 #h4("We provide information for helping you find a suitable suburb based on distance to your campus, rent cost, convenient level, and food service level.",align="center"), 
                 #h4("rent cost, convenient level, and food service level.",align="center"),
                 #h4("Adjust the panel on the left based on your situation!",align="center"),
-                br(),br(),
+                br(),
                 sidebarPanel(
                   h4("Where do you study?"),
                   selectInput("select_uni", "University:",  
@@ -215,10 +218,13 @@ ui <- fluidPage(
                                          #dashboardHeader(title=p("Your results",style = "font-family: 'Arial Black'")),
                                          dashboardSidebar(disable =TRUE),skin = "blue",
                                          dashboardBody(
-                                       
+                                          
                                            box(width = 12,status = "primary",solidHeader = TRUE,
                                         title=p(icon("star"),"List of Recommended Suburbs",style= "font-family:arial; font-weight:bold;font-size: 20px") ,
-                                        div(style = 'overflow-x: scroll', DT::dataTableOutput("table_recom", width = "auto"))),
+                                        fluidPage(
+                                        div(
+                                          style = 'overflow-x: scroll', 
+                                          DT::dataTableOutput("table_recom", width = "auto")))),
                                        br(), 
                                        #p("Map around",style= "font-family:arial; font-weight:bold;font-size: 20px"), 
                                        box(width = 12,status = "primary",solidHeader = TRUE,
@@ -231,7 +237,7 @@ ui <- fluidPage(
                                        
                                        #div(icon("star"),textOutput("title1"),style= "display:inline;font-family:arial;font-weight:bold;font-size:20px"), 
                                        #p(" With Top 5 best suburbs for you", style= "font-family:arial;font-weight:bold;font-size:18px"),
-                                       leafletOutput("sitemap")),  br(), box(uiOutput("tab"))
+                                       leafletOutput("sitemap")),  br(), box(uiOutput("tab"), uiOutput("num_test"))
                                          ))
                                        ),  
                               tabPanel(type="tabs","About the data",icon=icon("question-circle"),
@@ -268,7 +274,7 @@ ui <- fluidPage(
                                             
                                             
                                             p(icon("hand-point-right"),"Convenience level:", style = "font-family: 'Arial Black'; font-size: 16px"),
-                                            p('Number of business from all kinds of industry registered to government such as retail trade, health care, and financial services. This factor could help you understand more about the prosperity of a suburb. For people who do not have a car, they would prefer to live in a suburb with retail stores and supermarkets nearby. "Very High" means the number of services is higher 8000. "High" means the number of services is between 2200 and 8000 in the given suburb. "Medium" means the number of services is between 1200 and 2200. "Low" means the number of services is between 600 and 1200. "Very Low" means the number of services is lower than 600.'
+                                            p('Number of business from all kinds of industry registered to government such as retail trade, health care, and financial services. This factor could help you understand more about the prosperity of a suburb. For people who do not have a car, they would prefer to live in a suburb with retail stores and supermarkets nearby. "Very High" means the number of services is higher 8000 in the given suburb. "High" means the number of services is between 2200 and 8000 in the given suburb. "Medium" means the number of services is between 1200 and 2200. "Low" means the number of services is between 600 and 1200. "Very Low" means the number of services is lower than 600.'
                                               , style = "font-family: 'Arial'; font-size: 14px"),
                                             
                                             p(icon("hand-point-right"),"Food service level:",  style = "font-family: 'Arial Black'; font-size: 16px"),
