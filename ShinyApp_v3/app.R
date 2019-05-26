@@ -1,4 +1,3 @@
-<<<<<<< master
 rm(list=ls())
 library(ggplot2)
 library(shiny)   # web framework
@@ -12,6 +11,7 @@ library(leaflet)
 library(raster)
 library(leaflet.extras)
 library(shinymaterial)
+
 
 
 #open on GCP
@@ -77,20 +77,25 @@ ref_3 <- a("http://www.corra.com.au/australian-postcode-location-data/", href="h
 icon_uni <- makeAwesomeIcon(icon= 'flag', markerColor = 'red', iconColor = 'black')
 #icon_sub <- makeAwesomeIcon(icon = 'map-marker-alt', markerColor = 'blue', iconColor = 'black')
 
+
+
+
+
+
+
+
 server <-function(input, output, session) {
   
 
-  
-  formulaText <- reactive({
-    paste("Map around",'"', input$select_uni ,"-", input$select_campus,"campus",'"', "and the Top 5 best suburbs for you")
-  })
+
   
   formulaText2 <- reactive({
-    paste('Map around', input$select_uni ,input$select_campus,"campus","and Top 5 best suburbs for you")
+    paste('Map around', input$select_uni ,input$select_campus,"campus","and Top")
   })
   
   output$title1 <- renderText({formulaText2()})
-  
+  n_rows <- reactive({ NROW(filterdata())})
+  output$title2 <- renderText({ if (n_rows()>5) {5} else {n_rows()} })  
   
   ############# First Panel ################ 
   observe({
@@ -112,7 +117,7 @@ server <-function(input, output, session) {
     if (input$select_sort=="Distance to your campus"){
       data_new1 <- data_new[with(data_new, order(distance, min_rent)),]
     }
-    else if (input$select_sort=="Convenient level"){
+    else if (input$select_sort=="Convenience level"){
       data_new1 <- data_new[with(data_new, order(convenient_level,  -distance,decreasing = TRUE)),]
     }
     else if (input$select_sort=="Food service level"){
@@ -123,8 +128,17 @@ server <-function(input, output, session) {
     }
     
     data_new2 <- data_new1[(data_new1$distance >= input$dist_range[1] & data_new1$distance <= input$dist_range[2]) & (data_new1$Average_per_person >= input$rent_range[1] & data_new1$Average_per_person <= input$rent_range[2]),]
+
+  
+    if (NROW(data_new2)==0)
+    {
+      data_new2[0,c(1,4:8)]}  
+    else if (NROW(data_new2)<10)
+    {
+      data_new2[1:NROW(data_new2),c(1,4:8)]}  
     
-    data_new2[1:10,c(1,4:8)]
+    else{
+      data_new2[1:10,c(1,4:8)]}
   })
   
   
@@ -142,21 +156,18 @@ server <-function(input, output, session) {
   output$ref3 <- renderUI({
     tagList(ref_3,"")
   })
-
-  
-
   
   
   ## if else for this table????
   output$table_recom <- DT::renderDataTable({
     DT::datatable( filterdata()
-               , class = "cell-border compact hover order-column stripe",options=list(pageLength = 5, info=FALSE,lengthChange = FALSE, searching = FALSE) #lengthMenu = c(5,-1)
+               , class = "cell-border compact hover order-column stripe",options=list(pageLength = 5, lengthChange = FALSE, searching = FALSE) #lengthMenu = c(5,-1)
                , rownames = FALSE
                ,colnames = c("Suburb", "Weekly rent per one room in flat($)","Weekly rent per one room in house($)","Distance to your campus (km)","Convenience Level","Food Service Level")
-    )
+    ) 
 #    %>%formatStyle(background = 'white',color='black')
   }) 
- 
+
   
   output$sitemap <- renderLeaflet( {
     temp1 <- data1[(data1$University== input$select_uni)& (data1$Campus== input$select_campus),]
@@ -182,31 +193,34 @@ ui <- fluidPage(
 #  direction = "bottom"
 #),
 #theme =  shinytheme("journal"), 
-                 getTool('menu5.html'),   #menu bar
-                 br(),br(),br(), br(), br(),   
+                 getTool('menu6.html'),   #menu bar
+                 br(),br(),br(), br(),    
                 # Application title   
-                h2("Find Your Ideal Location!", align="center", style= "font-family: 'Arial Black'; font-size: 55px; color: rgb(51,122,183);"),
+                h2("Find A Suburb", align="center", style= "font-family: 'Arial Black'; font-size: 55px; color: rgb(51,122,183);"),
+                #br(),
                 #h4("Do you think you spend too much on your accommodation?",align="center"), 
                 #h4("We provide information for helping you find a suitable suburb based on distance to your campus, rent cost, convenient level, and food service level.",align="center"), 
                 #h4("rent cost, convenient level, and food service level.",align="center"),
-                #h4("Adjust the panel on the left based on your situation!",align="center"),
+                p("Based on your preferences, adjust the panel on the left to find your ideal location!"
+                  ,style = "font-family: 'Arial'; font-size: 16px",align="center"),
+                #h4("Based on your preferences, adjust the panel on the left to find your ideal location!",align="center", style= "font-family: 'Arial';"),
                 br(),
                 sidebarPanel(
-                  h4("Where do you study?"),
-                  selectInput("select_uni", "University:",  
+                  h4("Where do you study?",style = "font-family: 'Arial';"),
+                  selectInput("select_uni", p("University:", style = "font-family: 'Arial';"),  
                               uni),
                   selectInput("select_campus","Campus:",
                               campus1),
                   br(),
                   
-                  selectInput("select_sort", h4("Which factor you care about the most?"),c("Distance to your campus","Minimum rent cost","Convenient level","Food service level")),
+                  selectInput("select_sort", h4("Which factor you care about the most?",style = "font-family: 'Arial';"),c("Distance to your campus","Minimum rent cost","Convenience level","Food service level")),
                   br(),
-                  h4("Filter the results by:"),
+                  h4("Filter the results by:",style = "font-family: 'Arial';"),
                   sliderInput("dist_range"
-                              , label = "Distance to your campus (km)", value = c(0, 80)
+                              , label =p("Distance to your campus (km)",style = "font-family: 'Arial';"), value = c(0, 80)
                               , min = 0, max = 80),
                   sliderInput("rent_range"
-                              , label = "Weekly Rent Cost ($)", value = c(0, 320)
+                              , label = p("Weekly Rent Cost ($)",style = "font-family: 'Arial';"), value = c(0, 320)
                               , min = 80, max = 320)
                 ),
                 
@@ -224,7 +238,7 @@ ui <- fluidPage(
                                         title=p(icon("star"),"List of Recommended Suburbs",style= "font-family:arial; font-weight:bold;font-size: 20px") ,
                                         fluidPage(
                                         div(
-                                          style = 'overflow-x: scroll', 
+                                          style = "overflow-x: scroll; font-family: 'Arial';", 
                                           DT::dataTableOutput("table_recom", width = "auto")))),
                                        br(), 
                                        #p("Map around",style= "font-family:arial; font-weight:bold;font-size: 20px"), 
@@ -232,13 +246,13 @@ ui <- fluidPage(
                                       tags$head(tags$style("
                   #container * {     display: inline;
                      }")),
-                                       title =div(id="container",icon("star"), textOutput("title1"), 
+                                       title =div(id="container",icon("star"), textOutput("title1"), textOutput("title2"), "best suburbs for you",
                                            style= "display:inline;font-family:arial;font-weight:bold;font-size:20px"
                                            ),
                                        
                                        #div(icon("star"),textOutput("title1"),style= "display:inline;font-family:arial;font-weight:bold;font-size:20px"), 
                                        #p(" With Top 5 best suburbs for you", style= "font-family:arial;font-weight:bold;font-size:18px"),
-                                       leafletOutput("sitemap")),  br(), box(uiOutput("tab"), uiOutput("num_test"))
+                                       leafletOutput("sitemap")),  br(), box(uiOutput("tab"))
                                          ))
                                        ),  
                               tabPanel(type="tabs","About the data",icon=icon("question-circle"),
@@ -309,153 +323,3 @@ ui <- fluidPage(
 # Create Shiny app ----
 shinyApp(ui = ui, server = server)
 
-=======
-rm(list=ls())
-library(bigrquery)
-library(ggplot2)
-library(shiny)   # web framework
-library(DT)      # interface to the JavaScript library DataTables
-library(shinyjs)
-library(shinythemes)
-library(shinydashboard)
-library(dplyr)
-
-setwd("/home/easyaussie/ShinyApps/recommendation")
-set_service_token("augmented-tract-236700-2d404b41427a.json")
-
-#setwd("C:/Users/YHChen/@my/Course/FIT5120/Dataset")
-
-# input data and wranlging data
-sub_detail <- read.csv("suburb_detail_final_v2.csv")
-data1 <- read.csv("campus_loc_v1.csv")
-dist <- read.csv("sub_distance_final.csv")
-dist$distance = round(dist$distance, 2)
-colnames(dist) <- c("x","university","campus","Suburb","distance")
-
-data2 <- merge(dist, sub_detail, by.x="Suburb" , by.y="Suburb",sort=FALSE,all.x = TRUE) 
-keepcol <- c("Suburb","university","campus","Average_per_person","distance","convenient_level","food_service_level")
-data3 <- data2[,keepcol]
-uni <- unique(as.vector(data1$University))
-campus <- list()
-# subset of original dataset
-for (i in 1:length(uni)){ 
-  temp <- subset(data1, University==uni[i])
-  campus[[uni[i]]] <- as.vector(temp$Campus)
-}
-
-temp <- subset(data1, University==uni[1])
-campus1 <- as.vector(temp$Campus)
-
-url <- a(icon("home", lib = "glyphicon"),"Back to Homapage", href="http://www.firststepsinmel.ml",target="_self")
-server <-function(input, output, session) {
-  # Compute the forumla text in a reactive expression since it is 
-  #options(shiny.deprecation.messages=FALSE)
-  #observeEvent(input$navibar,{
-  #  if(input$navibar == "home"){
-  #    browseURL("http://www.firststepsinmel.ml")
-  #  }
-  #})
-  
-  ############# First Panel ################ 
-  observe({
-    uni1 <- input$select_uni
-    
-    # update the input choice
-    updateSelectInput(session, "select_campus",
-                      label = paste("Select your campus"),
-                      choices = campus[[uni1]]
-    )
-  })
-  
-  
-  formulaText <- reactive({
-    paste("Find accommendation", input$select_uni , "and", input$select_campus)
-  })
-
-  
-  
-  filterdata = reactive({
-    data_new <- data3[(data3$university== input$select_uni ) & (data2$campus ==  input$select_campus),]
-    
-    if (input$select_sort=="distance"){
-      data_new1 <- data_new[with(data_new, order(distance, Average_per_person)),]
-    }
-    else if (input$select_sort=="convenient level"){
-      data_new1 <- data_new[with(data_new, order(convenient_level,  -distance,decreasing = TRUE)),]
-    }
-    else if (input$select_sort=="food service level"){
-      data_new1 <- data_new[with(data_new, order(food_service_level, -distance, decreasing = TRUE)),]
-    }
-    else {
-      data_new1 <- data_new[with(data_new, order(Average_per_person, distance)),]
-    }
-    
-    data_new2 <- data_new1[(data_new1$distance >= input$dist_range[1] & data_new1$distance <= input$dist_range[2]) & (data_new1$Average_per_person >= input$rent_range[1] & data_new1$Average_per_person <= input$rent_range[2]),]
-    
-    data_new2[1:30,c(1,4:7)]
-  })
-  
-  
-  output$tab <- renderUI({
-    tagList(url,"")
-  })
-  
-  output$tab2 <- renderUI({
-    tagList(url,"")
-  })
-  output$table_recom <- DT::renderDataTable({
-    datatable( filterdata()
-               , class = "cell-border compact hover order-column",options=list(pageLength = 10, lengthMenu = c(10, 20, 30))
-               , rownames = FALSE,  colnames = c("Suburb", "Rent cost per room","Distance to Uni","Convenient Level","Food Service Level")
-    )
-  })
-}
-
-
-
-ui <- fluidPage(theme =  shinytheme("united"),
-                navbarPage( "First steps in Melbourne", id = "navibar",
-                            tabPanel("Accommondation",
-                                     # Application title
-                                     headerPanel("Find accommendation-Recommend a suburb"),
-                                     
-                                     # Sidebar with controls to select the variable to plot against
-                                     sidebarPanel(
-                                       h4("Select where you study:"),
-                                       selectInput("select_uni", "University:",  
-                                                   uni),
-                                       selectInput("select_campus","Campus:",
-                                                   campus1),
-                                       br(),
-                 
-                                       selectInput("select_sort", h4("Select a factor for sorting:"),c("distance","rent cost","convenient level","food service level")),
-                                       br(),
-                                       h4("Filter the results by:"),
-                                       sliderInput("dist_range"
-                                                   , label = "Distance to university", value = c(0, 200)
-                                                   , min = 0, max = 200),
-                                       sliderInput("rent_range"
-                                                   , label = "Rent Cost", value = c(0, 320)
-                                                   , min = 80, max = 320)
-                                     ),
-                                     
-                                     mainPanel(
-                                       tabsetPanel(type = "tabs",
-                                                   tabPanel("List of Recommended Suburbs", icon=icon("th")
-                                                            , DT::dataTableOutput("table_recom"))
-                                                   
-                                       ),  uiOutput("tab")) 
-                            ),
-                            tabPanel( "",icon = icon("home", lib = "glyphicon"),value="home",uiOutput("tab2")
-                        
-                                      ),
-                            selected = "Accommondation"
-                            
-                )
-)
-
-
-# Create Shiny app ----
-shinyApp(ui = ui, server = server)
-  
->>>>>>> master
