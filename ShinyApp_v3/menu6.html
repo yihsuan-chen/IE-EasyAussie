@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Support: Find a suburb</title>
+    <link rel="icon" src="href/logo.ico">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="assets/js/ie10-viewport-bug-workaround.css" rel="stylesheet">
+<style type="text/css">
+      *{
+       <!-- font-family:'Humanist521BT-Roman';-->
+      }
+      ul li{
+        font-size:16px;
+      }
+      #navbar ul li a{
+        color: black;
+      }
+      #navbar ul li a:hover{
+          color: gray;
+      }
+    </style>
+	  <link href="css/carousel.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="navbar-wrapper" style="position: fixed; top: 15px;z-index: 999;left: 10px;right: 10px;">
+        <div>
+            <nav class="navbar navbar-inverse navbar-static-top" style="background-color: white; color: white; border: 1px solid rgb(224,227,230);margin-top: -20px;box-shadow: 4px 4px 20px lightblue;">
+                <div class="container">
+                    <div class="navbar-header" style="height: 62px;">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" value="click here to start" style="background-color: black; width: 40px;height: 40px; text-align: center;">
+                        </button>
+
+                        <a class="navbar-brand active" href="https://www.firststepsinmel.ml/" ><img src="https://www.firststepsinmel.ml/img/webLogo3.png"  style="display: inline; height: 43px; margin-top: -10px;">
+                         <span class="hidden-sm-down hidden-xs" style="font-family: 'Arial Black';font-size: 24px;color:black; height: 20px; line-height: 20px;margin-left: 10px;">First Steps in Melbourne</span></a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse col-md-5" style="margin-top: 3px;">
+                        <ul class="nav navbar-nav" >
+                                    <li><a href="https://www.firststepsinmel.ml/introduction.php">Living Cost Calculator</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/Bills.php">Other expenses</a></li>
+                                   <!-- <li><a href="https://www.firststepsinmel.ml/shiny/easyaussie/find_a_suburb/">Find a Suburb</a></li>-->
+                                    <li><a href="https://www.firststepsinmel.ml/TipsList.html">Student Guidance</a></li>
+									
+                              <li><a href="https://www.firststepsinmel.ml/comparison.html" id="comparison" style="font-size: 16px;" onmousemove="compareMove()">Comparison</a></li>
+                              <li><a href="https://www.firststepsinmel.ml/prediction.php" id="prediction" onmousemove="predictionMove()" style="font-size: 16px;">Prediction</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="display: none;"><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="https://www.firststepsinmel.ml/introduction.php">Living Cost Calculator</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/TipsList.html">Guidance</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/comparison.html">Comparison</a></li>
+                                    <li><a href="https://www.firststepsinmel.ml/prediction.php">Prediction</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+	
+        <script type="text/javascript">
+          function calculatorDrag(){
+              $("#costFont").css('background-color',"white");
+              $("#stuSup").css('background-color',"white");
+              $("#preSup").css('background-color',"white");
+          }
+        </script>
+ <!--         <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+      <script>
+        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        </script>-->
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/holder.min.js"></script>
+        <script type="text/javascript">
+		
+		
+		
+          function btnAction(){
+            $("#btn").css('right','0px');
+          }
+          function btnOut(){
+            $("#btn").css('right','-10px');
+          }
+
+          function compareMove(){
+            $("#comparison").html('Compare cost index');
+            $("#comparison").mouseout(function(){
+                $("#comparison").html('Comparsion');
+                })
+            }
+
+          function predictionMove(){
+              $("#prediction").html('Cost Prediction');
+              $("#prediction").mouseout(function(){
+                  $("#prediction").html('Prediction');
+              })
+          }
+        </script>
+</body>
+
+</html>
